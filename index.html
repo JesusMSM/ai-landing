@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ImpulsIA - Enterprise Generative AI Solutions</title>
+
+    <!-- Preload critical resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="dropdown.css" as="style">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style">
+
+    <!-- Critical CSS inline -->
+    <style>
+      :root {
+        --primary: #6366f1;
+        --secondary: #ec4899;
+        --accent: #8b5cf6;
+        --text-primary: #ffffff;
+        --text-secondary: #a1a1aa;
+        --bg-primary: #18181b;
+        --bg-secondary: #27272a;
+        --bg-tertiary: #3f3f46;
+      }
+      
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        background: var(--bg-primary);
+        color: var(--text-primary);
+      }
+
+      .hero {
+        position: relative;
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        background: var(--bg-primary);
+        padding: 8rem 0;
+        text-align: center;
+        border-radius: 0 0 3rem 3rem;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .hero h1 {
+        font-size: 4rem;
+        font-weight: 800;
+        margin-bottom: 1.5rem;
+        line-height: 1.2;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero p {
+        font-size: 1.25rem;
+        max-width: 800px;
+        margin: 0 auto 2.5rem;
+        color: var(--text-secondary);
+        line-height: 1.8;
+      }
+
+      .hero-cta {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+      }
+
+      .cta-btn {
+        display: inline-block;
+        padding: 1rem 2rem;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
+        text-decoration: none;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .cta-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+      }
+
+      .secondary-btn {
+        background: transparent;
+        border: 2px solid var(--primary);
+        color: var(--primary);
+      }
+
+      .secondary-btn:hover {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        border-color: transparent;
+        color: white;
+      }
+    </style>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Transform your business with enterprise-grade Generative AI solutions. Custom AI chatbots, RAG systems, automation, and consulting from Silicon Valley and European experts."
+    />
+    <meta
+      name="keywords"
+      content="generative AI, AI consulting, enterprise AI, RAG, chatbots, AI automation, GenAI solutions, Silicon Valley AI, European AI"
+    />
+    <meta name="author" content="ImpulsIA" />
+
+    <!-- Open Graph / Social Media Tags -->
+    <meta property="og:title" content="ImpulsIA - Enterprise Generative AI Solutions" />
+    <meta
+      property="og:description"
+      content="Transform your business with cutting-edge AI solutions built by Silicon Valley and European experts. From customized AI chatbots to RAG flows and automation."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://ImpulsIA.tech" />
+    <meta property="og:image" content="https://ImpulsIA.tech/images/og-image.jpg" />
+    <meta property="og:site_name" content="ImpulsIA" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ImpulsIA" />
+    <meta name="twitter:creator" content="@ImpulsIA" />
+    <meta name="twitter:title" content="ImpulsIA - Enterprise Generative AI Solutions" />
+    <meta
+      name="twitter:description"
+      content="Transform your business with cutting-edge AI solutions built by Silicon Valley and European experts. From customized AI chatbots to RAG flows and automation."
+    />
+    <meta name="twitter:image" content="https://ImpulsIA.tech/images/og-image.jpg" />
+
+    <!-- WhatsApp Sharing Tags -->
+    <meta property="og:site_name" content="ImpulsIA" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:alt" content="ImpulsIA - Enterprise AI Solutions" />
+
+    <!-- Additional Meta Tags for Better Sharing -->
+    <meta name="theme-color" content="#1a1a1a" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="ImpulsIA" />
+    <meta name="application-name" content="ImpulsIA" />
+
+    <!-- Canonical URL for SEO -->
+    <link rel="canonical" href="https://ImpulsIA.tech" />
+
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>"
+    />
+
+    <!-- Font Awesome -->
+    <link 
+      rel="stylesheet" 
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      crossorigin="anonymous"
+    >
+
+    <!-- Custom CSS -->
+    <link 
+      rel="stylesheet" 
+      href="styles.css"
+    >
+    <link 
+      rel="stylesheet" 
+      href="dropdown.css"
+    >
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <a href="#" class="logo">
+            <i class="fas fa-brain logo-icon"></i>
+            <span class="logo-text" data-en="ImpulsIA" data-es="ImpulsIA"
+              >ImpulsIA</span
+            >
+          </a>
+
+          <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+          </button>
+
+          <ul class="nav-links">
+            <li class="dropdown">
+              <a href="#services" class="dropdown-toggle" data-en="Services" data-es="Servicios">Services</a>
+              <ul class="dropdown-menu">
+                <li><a href="services/ai-chatbots.html" data-en="Custom AI Chatbots" data-es="Chatbots de IA Personalizados">Custom AI Chatbots</a></li>
+                <li><a href="services/rag-solutions.html" data-en="RAG Solutions" data-es="Soluciones RAG">RAG Solutions</a></li>
+                <li><a href="services/genai-automation.html" data-en="GenAI Automation" data-es="Automatización con IA Generativa">GenAI Automation</a></li>
+                <li><a href="services/ai-strategy.html" data-en="AI Strategy Consulting" data-es="Consultoría de Estrategia IA">AI Strategy Consulting</a></li>
+                <li><a href="services/ai-learning.html" data-en="AI Learning & Webinars" data-es="Aprendizaje y Webinars de IA">AI Learning & Webinars</a></li>
+              </ul>
+            </li>
+            <li>
+              <a
+                href="#workflow"
+                data-en="How It Works"
+                data-es="Cómo Funciona"
+                >How It Works</a
+              >
+            </li>
+            <li>
+              <a href="#team" data-en="Our Team" data-es="Nuestro Equipo"
+                >Our Team</a
+              >
+            </li>
+            <li>
+              <a
+                href="#testimonials"
+                data-en="Testimonials"
+                data-es="Testimonios"
+                >Testimonials</a
+              >
+            </li>
+            <li>
+              <a href="#contact" data-en="Contact" data-es="Contacto"
+                >Contact</a
+              >
+            </li>
+          </ul>
+
+          <div class="lang-selector">
+            <button id="lang-toggle">
+              <i class="fas fa-globe"></i>
+              <span data-en="ES" data-es="EN">ES</span>
+            </button>
+          </div>
+
+          <div class="nav-buttons">
+            <button class="theme-switcher">
+              <i class="fas fa-moon"></i>
+              <span data-en="Dark Mode" data-es="Modo Oscuro">Dark Mode</span>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-background">
+        <div class="hero-particles"></div>
+        <div class="hero-gradient"></div>
+      </div>
+      <div class="container">
+        <div class="hero-content">
+        <h1
+          data-en="Enterprise Generative AI Solutions"
+          data-es="Soluciones de IA Generativa Empresarial"
+        >
+          Enterprise Generative AI Solutions
+        </h1>
+        <p
+          data-en="Transform your business with cutting-edge AI solutions built by Silicon Valley and European experts. From customized AI chatbots to RAG flows and automation, we help enterprises leverage the power of Generative AI."
+          data-es="Transforma tu negocio con soluciones de IA de vanguardia construidas por expertos de Silicon Valley y Europa. Desde chatbots de IA personalizados hasta flujos RAG y automatización, ayudamos a las empresas a aprovechar el poder de la IA Generativa."
+        >
+          Transform your business with cutting-edge AI solutions built by
+          Silicon Valley and European experts. From customized AI chatbots to
+          RAG flows and automation, we help enterprises leverage the power of
+          Generative AI.
+        </p>
+
+        <div class="hero-cta">
+          <a
+            href="#contact"
+            class="cta-btn"
+            data-en="Get Started"
+            data-es="Comenzar"
+            >Get Started</a
+          >
+          <a
+            href="#services"
+            class="secondary-btn"
+            data-en="Learn More"
+            data-es="Más Información"
+            >Learn More</a
+          >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2 data-en="Our Services" data-es="Nuestros Servicios">
+            Our Services
+          </h2>
+          <p
+            data-en="We offer a comprehensive suite of Generative AI solutions to meet your business needs"
+            data-es="Ofrecemos una suite completa de soluciones de IA Generativa para satisfacer las necesidades de tu negocio"
+          >
+            We offer a comprehensive suite of Generative AI solutions to meet
+            your business needs
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-comments"></i>
+            </div>
+            <h3 data-en="Custom AI Chatbots" data-es="Chatbots de IA Personalizados">
+              Custom AI Chatbots
+            </h3>
+            <p data-en="We build AI chatbots trained on your company's knowledge base, providing instant, accurate answers to customer and employee queries." data-es="Construimos chatbots de IA entrenados en la base de conocimientos de tu empresa, proporcionando respuestas instantáneas y precisas a las consultas de clientes y empleados.">
+              We build AI chatbots trained on your company's knowledge base, providing instant, accurate answers to customer and employee queries.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> <span data-en="24/7 Customer Support" data-es="Soporte al Cliente 24/7">24/7 Customer Support</span></li>
+              <li><i class="fas fa-check"></i> <span data-en="Multi-language Support" data-es="Soporte Multilingüe">Multi-language Support</span></li>
+              <li><i class="fas fa-check"></i> <span data-en="Custom Knowledge Integration" data-es="Integración de Conocimiento Personalizado">Custom Knowledge Integration</span></li>
+              <li><i class="fas fa-check"></i> <span data-en="Analytics Dashboard" data-es="Panel de Análisis">Analytics Dashboard</span></li>
+            </ul>
+            <a href="services/ai-chatbots.html" class="learn-more" data-en="Learn more" data-es="Más información">
+              Learn more <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-database"></i>
+            </div>
+            <h3 data-en="RAG Solutions" data-es="Soluciones RAG">
+              RAG Solutions
+            </h3>
+            <p data-en="Our Retrieval-Augmented Generation (RAG) systems combine the power of large language models with your enterprise data for accurate and context-aware AI responses." data-es="Nuestros sistemas de Generación Aumentada por Recuperación (RAG) combinan el poder de los grandes modelos de lenguaje con tus datos empresariales para obtener respuestas de IA precisas y conscientes del contexto.">
+              Our Retrieval-Augmented Generation (RAG) systems combine the power of large language models with your enterprise data for accurate and context-aware AI responses.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> <span data-en="Real-time Data Processing" data-es="Procesamiento de Datos en Tiempo Real">Real-time Data Processing</span></li>
+              <li><i class="fas fa-check"></i> <span data-en="Advanced Search Capabilities" data-es="Capacidades de Búsqueda Avanzadas">Advanced Search Capabilities</span></li>
+              <li><i class="fas fa-check"></i> <span data-en="Source Attribution" data-es="Atribución de Fuentes">Source Attribution</span></li>
+            </ul>
+            <a href="services/rag-solutions.html" class="learn-more" data-en="Learn more" data-es="Más información">
+              Learn more <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-robot"></i>
+            </div>
+            <h3 data-en="GenAI Automation" data-es="Automatización con IA Generativa">
+              GenAI Automation
+            </h3>
+            <p data-en="Streamline workflows and boost productivity with our AI-powered automation solutions, from document processing to content generation and analysis." data-es="Optimiza los flujos de trabajo y aumenta la productividad con nuestras soluciones de automatización impulsadas por IA, desde el procesamiento de documentos hasta la generación y análisis de contenido.">
+              Streamline workflows and boost productivity with our AI-powered automation solutions, from document processing to content generation and analysis.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> <span data-en="Document Processing" data-es="Procesamiento de Documentos">Document Processing</span></li>
+              <li><i class="fas fa-check"></i> <span data-en="Content Generation" data-es="Generación de Contenido">Content Generation</span></li>
+              <li><i class="fas fa-check"></i> <span data-en="Data Analysis" data-es="Análisis de Datos">Data Analysis</span></li>
+              <li><i class="fas fa-check"></i> <span data-en="Workflow Integration" data-es="Integración de Flujos de Trabajo">Workflow Integration</span></li>
+            </ul>
+            <a href="services/genai-automation.html" class="learn-more" data-en="Learn more" data-es="Más información">
+              Learn more <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3 data-en="AI Strategy Consulting" data-es="Consultoría de Estrategia IA">
+              AI Strategy Consulting
+            </h3>
+            <p data-en="Our experts help you identify the most valuable AI integration opportunities for your business, developing roadmaps and implementation strategies." data-es="Nuestros expertos te ayudan a identificar las oportunidades más valiosas de integración de IA para tu negocio, desarrollando hojas de ruta y estrategias de implementación.">
+              Our experts help you identify the most valuable AI integration opportunities for your business, developing roadmaps and implementation strategies.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> <span data-en="ROI Assessment" data-es="Evaluación de ROI">ROI Assessment</span></li>
+              <li><i class="fas fa-check"></i> <span data-en="Technology Roadmap" data-es="Hoja de Ruta Tecnológica">Technology Roadmap</span></li>
+              <li><i class="fas fa-check"></i> <span data-en="Risk Analysis" data-es="Análisis de Riesgos">Risk Analysis</span></li>
+              <li><i class="fas fa-check"></i> <span data-en="Implementation Planning" data-es="Planificación de Implementación">Implementation Planning</span></li>
+            </ul>
+            <a href="services/ai-strategy.html" class="learn-more" data-en="Learn more" data-es="Más información">
+              Learn more <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+
+          <div class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <h3 data-en="AI Learning & Webinars" data-es="Aprendizaje y Webinars de IA">
+              AI Learning & Webinars
+            </h3>
+            <p data-en="Empower your team with comprehensive AI training programs and interactive webinars designed to build AI literacy and practical implementation skills." data-es="Potencia a tu equipo con programas integrales de formación en IA y webinars interactivos diseñados para desarrollar la alfabetización en IA y habilidades prácticas de implementación.">
+              Empower your team with comprehensive AI training programs and interactive webinars designed to build AI literacy and practical implementation skills.
+            </p>
+            <ul class="service-features">
+              <li><i class="fas fa-check"></i> <span data-en="Custom Training Programs" data-es="Programas de Formación Personalizados">Custom Training Programs</span></li>
+              <li><i class="fas fa-check"></i> <span data-en="Interactive Webinars" data-es="Webinars Interactivos">Interactive Webinars</span></li>
+              <li><i class="fas fa-check"></i> <span data-en="Hands-on Workshops" data-es="Talleres Prácticos">Hands-on Workshops</span></li>
+              <li><i class="fas fa-check"></i> <span data-en="Progress Tracking" data-es="Seguimiento del Progreso">Progress Tracking</span></li>
+            </ul>
+            <a href="services/ai-learning.html" class="learn-more" data-en="Learn more" data-es="Más información">
+              Learn more <i class="fas fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="workflow" class="section" aria-labelledby="workflow-title">
+      <div class="container">
+        <div class="section-heading">
+          <h2 id="workflow-title" data-en="How We Work" data-es="Cómo Trabajamos">How We Work</h2>
+          <p
+            data-en="Our proven process ensures we deliver enterprise-grade AI solutions that meet your specific needs"
+            data-es="Nuestro proceso probado garantiza que entregamos soluciones de IA de nivel empresarial que satisfacen tus necesidades específicas"
+          >
+            Our proven process ensures we deliver enterprise-grade AI solutions
+            that meet your specific needs
+          </p>
+        </div>
+
+        <div class="workflow" role="list" aria-label="Our workflow process">
+          <div class="workflow-steps">
+            <article class="step" role="listitem">
+              <div class="step-number" aria-hidden="true">1</div>
+              <div class="step-content">
+                <h3>
+                  <i class="fas fa-search step-icon"></i>
+                  <span data-en="Discovery & Assessment" data-es="Descubrimiento y Evaluación">
+                  Discovery & Assessment
+                  </span>
+                </h3>
+                <p
+                  data-en="We start by understanding your business needs, existing infrastructure, and data landscape to identify the most impactful AI opportunities."
+                  data-es="Comenzamos por entender las necesidades de tu negocio, la infraestructura existente y el panorama de datos para identificar las oportunidades de IA más impactantes."
+                >
+                  We start by understanding your business needs, existing
+                  infrastructure, and data landscape to identify the most
+                  impactful AI opportunities.
+                </p>
+              </div>
+            </article>
+
+            <article class="step" role="listitem">
+              <div class="step-number" aria-hidden="true">2</div>
+              <div class="step-content">
+                <h3>
+                  <i class="fas fa-drafting-compass step-icon"></i>
+                  <span data-en="Solution Design" data-es="Diseño de Solución">
+                  Solution Design
+                  </span>
+                </h3>
+                <p
+                  data-en="Our experts design a tailored AI solution that integrates with your systems, selecting the optimal models, architectures, and workflows."
+                  data-es="Nuestros expertos diseñan una solución de IA a medida que se integra con tus sistemas, seleccionando los modelos, arquitecturas y flujos de trabajo óptimos."
+                >
+                  Our experts design a tailored AI solution that integrates
+                  with your systems, selecting the optimal models,
+                  architectures, and workflows.
+                </p>
+              </div>
+            </article>
+
+            <article class="step" role="listitem">
+              <div class="step-number" aria-hidden="true">3</div>
+              <div class="step-content">
+                <h3>
+                  <i class="fas fa-code step-icon"></i>
+                  <span data-en="Development & Integration" data-es="Desarrollo e Integración">
+                  Development & Integration
+                  </span>
+                </h3>
+                <p
+                  data-en="We build your solution using industry-leading cloud architectures and best practices, ensuring security, scalability, and compliance."
+                  data-es="Construimos tu solución utilizando arquitecturas en la nube líderes en la industria y mejores prácticas, garantizando seguridad, escalabilidad y cumplimiento."
+                >
+                  We build your solution using industry-leading cloud
+                  architectures and best practices, ensuring security,
+                  scalability, and compliance.
+                </p>
+              </div>
+            </article>
+
+            <article class="step" role="listitem">
+              <div class="step-number" aria-hidden="true">4</div>
+              <div class="step-content">
+                <h3>
+                  <i class="fas fa-vial step-icon"></i>
+                  <span data-en="Testing & Refinement" data-es="Pruebas y Refinamiento">
+                  Testing & Refinement
+                  </span>
+                </h3>
+                <p
+                  data-en="We rigorously test and refine your AI solution, ensuring it meets performance benchmarks and delivers accurate, reliable results."
+                  data-es="Probamos y refinamos rigurosamente tu solución de IA, asegurando que cumpla con los benchmarks de rendimiento y entregue resultados precisos y fiables."
+                >
+                  We rigorously test and refine your AI solution, ensuring it
+                  meets performance benchmarks and delivers accurate, reliable
+                  results.
+                </p>
+              </div>
+            </article>
+
+            <article class="step" role="listitem">
+              <div class="step-number" aria-hidden="true">5</div>
+              <div class="step-content">
+                <h3>
+                  <i class="fas fa-rocket step-icon"></i>
+                  <span data-en="Deployment & Support" data-es="Implementación y Soporte">
+                  Deployment & Support
+                  </span>
+                </h3>
+                <p
+                  data-en="We deploy your solution and provide ongoing monitoring, maintenance, and optimization to ensure it continues to deliver value as your business evolves."
+                  data-es="Implementamos tu solución y proporcionamos monitoreo, mantenimiento y optimización continuos para garantizar que siga aportando valor a medida que tu negocio evoluciona."
+                >
+                  We deploy your solution and provide ongoing monitoring,
+                  maintenance, and optimization to ensure it continues to
+                  deliver value as your business evolves.
+                </p>
+              </div>
+            </article>
+            </div>
+          </div>
+      </div>
+    </section>
+
+    <section id="team" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2 data-en="Our Team" data-es="Nuestro Equipo">Our Team</h2>
+          <p
+            data-en="Our founders bring together expertise from leading technology and consulting companies across Silicon Valley and Europe"
+            data-es="Nuestros fundadores reúnen experiencia de las principales empresas tecnológicas y de consultoría de Silicon Valley y Europa"
+          >
+            Our founders bring together expertise from leading technology and consulting companies across Silicon Valley and Europe
+          </p>
+        </div>
+
+        <div class="team-members">
+          <article class="team-member">
+            <div class="member-img-container">
+              <img
+                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
+                alt="Our team working together"
+                class="member-img"
+                loading="lazy"
+                width="1170"
+                height="780"
+                decoding="async"
+              />
+              <div class="member-img-overlay">
+                <div class="overlay-content">
+                  <i class="fas fa-users"></i>
+                </div>
+              </div>
+            </div>
+            <div class="member-info">
+              <div class="member-header">
+                <h3 data-en="Our Leadership Team" data-es="Nuestro Equipo Directivo">Our Leadership Team</h3>
+                <div class="member-badges">
+                  <span class="badge" data-en="Silicon Valley" data-es="Silicon Valley">Silicon Valley</span>
+                  <span class="badge" data-en="European Enterprise" data-es="Empresa Europea">European Enterprise</span>
+                </div>
+              </div>
+              <p class="member-role" data-en="Combining Innovation with Enterprise Expertise" data-es="Combinando Innovación con Experiencia Empresarial">Combining Innovation with Enterprise Expertise</p>
+              <p class="member-bio" data-en="Our leadership team combines deep technical expertise in large-scale AI systems and cloud architecture from Silicon Valley's leading tech companies with strategic consulting experience from major European enterprises. This unique blend enables us to deliver enterprise-grade AI solutions that bridge the gap between cutting-edge technology and practical business value." data-es="Nuestro equipo directivo combina una profunda experiencia técnica en sistemas de IA a gran escala y arquitectura en la nube de las principales empresas tecnológicas de Silicon Valley con experiencia en consultoría estratégica de importantes empresas europeas. Esta combinación única nos permite entregar soluciones de IA de nivel empresarial que conectan la tecnología de vanguardia con el valor práctico para los negocios.">
+                Our leadership team combines deep technical expertise in large-scale AI systems and cloud architecture from Silicon Valley's leading tech companies with strategic consulting experience from major European enterprises. This unique blend enables us to deliver enterprise-grade AI solutions that bridge the gap between cutting-edge technology and practical business value.
+              </p>
+              <div class="social-links">
+                <a href="#" aria-label="LinkedIn" class="social-link">
+                  <i class="fab fa-linkedin"></i>
+                  <span>LinkedIn</span>
+                </a>
+                <a href="#" aria-label="Twitter" class="social-link">
+                  <i class="fab fa-twitter"></i>
+                  <span>Twitter</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2 data-en="Testimonials" data-es="Testimonios">Testimonials</h2>
+          <p
+            data-en="What our clients say about us"
+            data-es="Lo que dicen nuestros clientes sobre nosotros"
+          >
+            What our clients say about us
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <div class="testimonial-card">
+            <div class="quote">
+              "ImpulsIA has been a game-changer for our business. Their Generative AI solutions have helped us to scale our operations and improve our customer service."
+            </div>
+            <div class="client">
+              <img 
+                src="https://via.placeholder.com/32" 
+                alt="Client" 
+                class="client-img"
+                loading="lazy"
+                width="32"
+                height="32"
+                decoding="async"
+              >
+              <div class="client-info">
+                <h4>John Doe</h4>
+                <p>CEO, Tech Solutions Inc.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="quote">
+              "The team at ImpulsIA is incredibly knowledgeable and professional. They've helped us to implement AI solutions that have exceeded our expectations."
+            </div>
+            <div class="client">
+              <img 
+                src="https://via.placeholder.com/32" 
+                alt="Client" 
+                class="client-img"
+                loading="lazy"
+                width="32"
+                height="32"
+                decoding="async"
+              >
+              <div class="client-info">
+                <h4>Jane Smith</h4>
+                <p>CTO, AI Innovations Ltd.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonial-card">
+            <div class="quote">
+              "ImpulsIA's Generative AI solutions have been a game-changer for our business. Their team's expertise and dedication are unmatched."
+            </div>
+            <div class="client">
+              <img 
+                src="https://via.placeholder.com/32" 
+                alt="Client" 
+                class="client-img"
+                loading="lazy"
+                width="32"
+                height="32"
+                decoding="async"
+              >
+              <div class="client-info">
+                <h4>Michael Brown</h4>
+                <p>CFO, AI Solutions Corp.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-heading">
+          <h2 data-en="Contact Us" data-es="Contáctanos">Contact Us</h2>
+          <p
+            data-en="We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible."
+            data-es="Nos encantaría escucharte. Completa el formulario a continuación y te responderemos lo antes posible."
+          >
+            We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible.
+          </p>
+        </div>
+        <div class="contact-form">
+          <form action="mailto:contact@impulsia.ai" method="post" enctype="text/plain">
+            <div class="form-group">
+              <button 
+                onclick="window.location.href='mailto:contact@impulsia.ai'" 
+                class="cta-btn"
+                data-en="Send" 
+                data-es="Enviar"
+              >
+                Send
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-col">
+            <h3>About Us</h3>
+            <ul class="footer-links">
+              <li><a href="#">About</a></li>
+              <li><a href="#team">Team</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Services</h3>
+            <ul class="footer-links">
+              <li><a href="services/ai-chatbots.html" data-en="Custom AI Chatbots" data-es="Chatbots de IA Personalizados">Custom AI Chatbots</a></li>
+              <li><a href="services/rag-solutions.html" data-en="RAG Solutions" data-es="Soluciones RAG">RAG Solutions</a></li>
+              <li><a href="services/genai-automation.html" data-en="GenAI Automation" data-es="Automatización con IA Generativa">GenAI Automation</a></li>
+              <li><a href="services/ai-strategy.html" data-en="AI Strategy Consulting" data-es="Consultoría de Estrategia IA">AI Strategy Consulting</a></li>
+              <li><a href="services/ai-learning.html" data-en="AI Learning & Webinars" data-es="Aprendizaje y Webinars de IA">AI Learning & Webinars</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Resources</h3>
+            <ul class="footer-links">
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Case Studies</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h3>Contact</h3>
+            <ul class="footer-links">
+              <li><a href="#contact">Email</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 ImpulsIA. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script defer>
+      // Language switching functionality
+      const langToggle = document.getElementById('lang-toggle');
+      
+      // Check for saved language preference or default to English
+      let currentLang = localStorage.getItem('language') || 'en';
+      
+      // Function to update all translatable elements
+      function updateLanguage(lang) {
+        // Update all elements with data-en and data-es attributes
+        document.querySelectorAll('[data-en]').forEach(element => {
+          element.textContent = element.getAttribute(`data-${lang}`);
+        });
+
+        // Update button text
+        langToggle.querySelector('span').textContent = lang === 'en' ? 'ES' : 'EN';
+      }
+
+      // Toggle language on button click
+      langToggle.addEventListener('click', () => {
+        currentLang = currentLang === 'en' ? 'es' : 'en';
+        localStorage.setItem('language', currentLang);
+        updateLanguage(currentLang);
+      });
+
+      // Initialize with saved language preference
+      updateLanguage(currentLang);
+
+      // Theme switching functionality
+      const themeSwitcher = document.querySelector('.theme-switcher');
+      const themeIcon = themeSwitcher.querySelector('i');
+      
+      // Check for saved theme preference or default to dark
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+      updateThemeIcon(savedTheme);
+
+      function updateThemeIcon(theme) {
+        themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+        themeSwitcher.querySelector('span').textContent = theme === 'dark' ? 'Light Mode' : 'Dark Mode';
+      }
+
+      themeSwitcher.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        // Add transition class
+        document.documentElement.classList.add('theme-transition');
+        
+        // Update theme
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+
+        // Remove transition class after animation
+        setTimeout(() => {
+          document.documentElement.classList.remove('theme-transition');
+        }, 300);
+      });
+
+      // Register service worker
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then(registration => {
+              console.log('ServiceWorker registration successful');
+            })
+            .catch(err => {
+              console.log('ServiceWorker registration failed: ', err);
+            });
+        });
+      }
+    </script>
+  </body>
+</html>
