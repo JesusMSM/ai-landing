@@ -81,6 +81,24 @@ nav {
     font-size: 1.8rem;
 }
 
+.logo-image {
+    height: 45px;
+    width: auto;
+    margin-left: 0.5rem;
+}
+
+.logo-image[data-theme="light"] {
+    display: none;
+}
+
+[data-theme="light"] .logo-image[data-theme="light"] {
+    display: block;
+}
+
+[data-theme="light"] .logo-image[data-theme="dark"] {
+    display: none;
+}
+
 .nav-links {
     display: flex;
     gap: 2rem;

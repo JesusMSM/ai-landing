@@ -1,4 +1,4 @@
-const CACHE_NAME = 'impulsia-cache-v1';
+const CACHE_NAME = 'vanguardia-solutions-cache-v1';
 const urlsToCache = [
     '/',
     '/styles.css',
