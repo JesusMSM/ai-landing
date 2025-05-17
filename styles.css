@@ -794,63 +794,6 @@ nav {
     font-weight: 500;
 }
 
-.testimonials {
-    background: linear-gradient(135deg,
-            rgba(99, 102, 241, 0.1) 0%,
-            rgba(236, 72, 153, 0.1) 100%);
-}
-
-.testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
-
-.testimonial-card {
-    background-color: var(--bg-secondary);
-    border-radius: 1rem;
-    padding: 2rem;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-}
-
-.quote {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-    position: relative;
-}
-
-.quote::before {
-    content: '"';
-    font-size: 4rem;
-    position: absolute;
-    left: -1.5rem;
-    top: -2rem;
-    color: var(--light-gray);
-    font-family: serif;
-}
-
-.client {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.client-img {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.client-info h4 {
-    font-weight: 600;
-}
-
-.client-company {
-    color: var(--gray);
-    font-size: 0.9rem;
-}
-
 /* Contact Form Styles */
 .contact-form {
     max-width: 800px;
