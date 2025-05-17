@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains">
     <title>Vanguardia Solutions - Enterprise Generative AI Solutions</title>
 
     <!-- Preload critical resources -->
@@ -616,7 +617,7 @@
             </div>
             <div class="client">
               <img 
-                src="https://via.placeholder.com/32" 
+                src="https://secure.gravatar.com/avatar/placeholder?s=32" 
                 alt="Client" 
                 class="client-img"
                 loading="lazy"
@@ -637,7 +638,7 @@
             </div>
             <div class="client">
               <img 
-                src="https://via.placeholder.com/32" 
+                src="https://secure.gravatar.com/avatar/placeholder?s=32" 
                 alt="Client" 
                 class="client-img"
                 loading="lazy"
@@ -658,7 +659,7 @@
             </div>
             <div class="client">
               <img 
-                src="https://via.placeholder.com/32" 
+                src="https://secure.gravatar.com/avatar/placeholder?s=32" 
                 alt="Client" 
                 class="client-img"
                 loading="lazy"
@@ -752,8 +753,14 @@
       // Language switching functionality
       const langToggle = document.getElementById('lang-toggle');
       
-      // Check for saved language preference or default to English
-      let currentLang = localStorage.getItem('language') || 'en';
+      // Function to detect browser language
+      function detectBrowserLanguage() {
+        const browserLang = navigator.language || navigator.userLanguage;
+        return browserLang.startsWith('es') ? 'es' : 'en';
+      }
+      
+      // Check for saved language preference, browser language, or default to English
+      let currentLang = localStorage.getItem('language') || detectBrowserLanguage();
       
       // Function to update all translatable elements
       function updateLanguage(lang) {
@@ -773,7 +780,7 @@
         updateLanguage(currentLang);
       });
 
-      // Initialize with saved language preference
+      // Initialize with saved language preference or browser language
       updateLanguage(currentLang);
 
       // Theme switching functionality
